@@ -20,11 +20,13 @@ var vue = new Vue({
                 alert('success');
             }
         },
+        clearError: function() {
+            this.error.name = this.error.email = this.error.subject = this.error.message = '*';
+        },
         validate: function() {
             var error = 0;
 
-            // Restore original value
-            this.error.name = this.error.email = this.error.subject = this.error.message = '*';
+            this.clearError();
 
             if (this.contact.name.length < 6) {
                 this.error.name = ' Name must have at least 6 characters';
@@ -50,7 +52,7 @@ var vue = new Vue({
         },
         reset: function() {
             this.contact.name = this.contact.email = this.contact.subject = this.contact.message = '';
-            this.error.name = this.error.email = this.error.subject = this.error.message = '*';
+            this.clearError();
         }
     }
 });

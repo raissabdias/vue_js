@@ -3,12 +3,12 @@ body {
     background-size: cover;
 }
 
-#element {
+#app {
     height: 100vh;
     color: white;
 }
 
-#element form {
+#app form {
     background-color: rgb(0, 0, 0, 0.2);
     padding: 2em;
     border-radius: 10px;
@@ -16,29 +16,35 @@ body {
     font-family: "Source Sans 3", sans-serif;
 }
 
-#element h3 {
+#app h3 {
     color: #b999c0;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
 }
 
-#element h3 span {
+#app h3 span {
     color: #cce741;
 }
 
-#element .input,
-#element input,
-#element .textarea,
-#element textarea,
-#element .prepend {
+#app .input,
+#app input,
+#app .textarea,
+#app textarea,
+#app .prepend {
     border-radius: 10px;
 }
 
-#element label {
+#app label {
     line-height: 2em;
     font-weight: 600;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
 }
 
-#element button {
+#app button {
     border-radius: 10px;
+}
+
+#app .form-error {
+    color: red;
+    font-size: .9em;
+    font-weight: 400;
 }

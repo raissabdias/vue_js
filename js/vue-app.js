@@ -47,6 +47,10 @@ var vue = new Vue({
             }
 
             return (error === 0);
+        },
+        reset: function() {
+            this.contact.name = this.contact.email = this.contact.subject = this.contact.message = '';
+            this.error.name = this.error.email = this.error.subject = this.error.message = '*';
         }
     }
 });

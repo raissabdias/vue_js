@@ -31,6 +31,7 @@
                     <textarea v-model="contact.message" id="message" data-validate="required minlength=1" data-role="textarea" data-role="input" data-prepend="<span class='mif-email'></span>" data-auto-size="true" data-max-height="200"></textarea>
                 </div>
                 <div class="text-center mt-5">
+                    <button type="button" class="button alert outline mr-2" v-on:click="reset">Reset</button>
                     <button type="button" class="button success outline" v-on:click="send">Send</button>
                 </div>
             </form>

@@ -6,18 +6,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-define('HOST', 'smtp.gmail.com');
-define('PORT', '587');
-define('USER', 'mailervue@gmail.com');
-define('PASS', 'VueMailer.js');
-
 /**
  * Send an email
  * @param string $name 
  * @param string $email 
  * @param string $subject 
  * @param string $message 
- * @return boolean 
+ * @return boolean|string
  */
 function send(string $name, string $email, string $subject, string $message) 
 {
@@ -45,6 +40,6 @@ function send(string $name, string $email, string $subject, string $message)
         $mail->send();
         return true;
     } catch (Exception $e) {
-        echo $mail->ErrorInfo;
+        return $mail->ErrorInfo;
     }
 }

@@ -29,7 +29,6 @@ var vue = new Vue({
                         vue.reset();
                         vue.result = 'Message sent!';
                     } else {
-                        console.log(response.data);
                         vue.result = response.data;
                     }
 

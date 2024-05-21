@@ -10,7 +10,7 @@
     $message = strip_tags($post['message']);
 
     # Validate name
-    if (strlen($name) < 10) {
+    if (strlen($name) < 6) {
         echo 'Name is invalid';
         die;
     }

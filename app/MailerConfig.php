@@ -19,14 +19,13 @@ function send(string $name, string $email, string $subject, string $message)
     $mail = new PHPMailer(true);
 
     try {
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = 'ssl://smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'mailervue@gmail.com';
-        $mail->Password = 'VueMailer.js';
+        $mail->Password = 'jfpq lcts awha xrpc';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port = 485;
+        $mail->Port = 465;
 
         //Recipients
         $mail->setFrom('mailervue@gmail.com', 'Vue Mailer.js');

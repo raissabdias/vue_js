@@ -30,15 +30,19 @@
                     <label for="message">Message<span class="form-error">{{ error.message }}</span></label>
                     <textarea v-model="contact.message" id="message" data-validate="required minlength=1" data-role="textarea" data-role="input" data-prepend="<span class='mif-email'></span>" data-auto-size="true" data-max-height="200"></textarea>
                 </div>
+                <div class="result text-center mt-3">
+                    <span>{{ result }}</span>
+                </div>
                 <div class="text-center mt-5">
                     <button type="button" class="button alert outline mr-2" v-on:click="reset">Reset</button>
-                    <button type="button" class="button success outline" v-on:click="send">Send</button>
+                    <button type="button" class="button success outline" v-on:click="send" :disabled="disableButton">Send</button>
                 </div>
             </form>
         </div>
     </div>
     <script src="js/_ext/metro.js"></script>
-    <script src="js/vue.js"></script>
+    <script src="js/_ext/vue.js"></script>
+    <script src="js/_ext/axios.min.js"></script>
     <script src="js/vue-app.js"></script>
 </body>
 </html>

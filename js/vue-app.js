@@ -12,12 +12,21 @@ var vue = new Vue({
             email: '',
             subject: '',
             message: ''
-        }
+        },
+        disableButton: false,
+        urlForm: 'app/send.php',
+        result: ''
     },
     methods: {
         send: function() {
             if (this.validate()) {
-                alert('success');
+                this.disableButton = true;
+                this.result = 'Sendind form...'
+
+                var form = this.formData(this.contact);
+                axios.post(this.urlForm, form).then(function(response) {
+                    console.log(response);
+                });
             }
         },
         clearError: function() {
@@ -53,6 +62,16 @@ var vue = new Vue({
         reset: function() {
             this.contact.name = this.contact.email = this.contact.subject = this.contact.message = '';
             this.clearError();
+        },
+        formData: function(obj) {
+            var formData = new FormData();
+
+            for (var key in obj) {
+                console.log(key, obj);
+                formData.append(key, obj[key])
+            }
+
+            return formData;
         }
     }
 });

@@ -25,7 +25,15 @@ var vue = new Vue({
 
                 var form = this.formData(this.contact);
                 axios.post(this.urlForm, form).then(function(response) {
-                    console.log(response);
+                    if (response.data == 'sent') {
+                        vue.reset();
+                        vue.result = 'Message sent!';
+                    } else {
+                        console.log(response.data);
+                        vue.result = response.data;
+                    }
+
+                    vue.disableButton = false;
                 });
             }
         },
@@ -67,7 +75,6 @@ var vue = new Vue({
             var formData = new FormData();
 
             for (var key in obj) {
-                console.log(key, obj);
                 formData.append(key, obj[key])
             }
 
